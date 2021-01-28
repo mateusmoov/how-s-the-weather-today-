@@ -4,9 +4,8 @@ require("dotenv").config();
 
 // REACT_APP_API_KEY
 
-function api() {
+function Api() {
   const [location, setLocation] = useState(false);
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       console.log(position.coords.latitude, position.coords.longitude);
@@ -21,4 +20,4 @@ function api() {
   }
 }
 
-export default api;
+export default Api;
