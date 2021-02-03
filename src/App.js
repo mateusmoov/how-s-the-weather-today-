@@ -1,9 +1,13 @@
-import Api from "./services/Api.js";
+import "./global.scss";
+import Text from "./components/Text";
 
 function App() {
   return (
     <div className="App">
-      <Api />
+      <Text type="title">Batata</Text>
+      <Text type="subtitle">Batata</Text>
+      <Text type="navbar">Batata</Text>
+      <Text type="location">Batata</Text>
     </div>
   );
 }
