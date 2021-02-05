@@ -1,11 +1,11 @@
 import "./styles.scss";
 
 function Title({ children }) {
-  return <p id="title">{children}</p>;
+  return <h1 id="title">{children}</h1>;
 }
 
 function Subtitle({ children }) {
-  return <p id="subtitle">{children}</p>;
+  return <h2 id="subtitle">{children}</h2>;
 }
 
 function Location({ children }) {
