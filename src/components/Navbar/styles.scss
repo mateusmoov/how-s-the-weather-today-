@@ -1,10 +1,14 @@
 .navbar-container {
   display: flex;
   flex-direction: row;
-
+  margin: 20px 0 0 160px;
   .navbar-text {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+
+    a {
+      margin: 0 31px;
+    }
   }
 
   a {

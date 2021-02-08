@@ -7,7 +7,7 @@ function Location() {
     <>
       <div className="location-container">
         <div className="location-image">
-          <img src={LocationIcon} alt="location" />
+          <img src={LocationIcon} alt="location" width="24" />
         </div>
         <Text type="location">Brasília - Distrito Federal</Text>
       </div>
