@@ -9,7 +9,6 @@ function Navbar() {
         <div className="navbar-image">
           <img src={NavbarImage} alt="logo" />
         </div>
-
         <div className="navbar-text">
           <Text type="navbar">
             <a href="https://ongrace.com/portal/">Home</a>
