@@ -1,9 +1,9 @@
-import NoLocation from "./pages/no-location";
+import Clima from "./services/Api";
 
 function App() {
   return (
     <>
-      <NoLocation />
+      <Clima />
     </>
   );
 }
