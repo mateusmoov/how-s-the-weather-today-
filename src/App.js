@@ -1,9 +1,9 @@
-import Clima from "./services/Api";
+import Main from "./pages/main";
 
 function App() {
   return (
     <>
-      <Clima />
+      <Main />
     </>
   );
 }
