@@ -1,9 +1,8 @@
-import NoLocation from "./pages/no-location";
-
+import Api from "./services/Api";
 function App() {
   return (
     <>
-      <NoLocation />
+      <Api />
     </>
   );
 }
