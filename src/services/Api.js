@@ -8,11 +8,12 @@ const Clima = () => {
   const [data, setData] = useState({});
   const [url, setUrl] = useState();
   const [location, setLocation] = useState(false);
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setUrl(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=19115628040997e391bb0310a0002db7`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`
       );
       setLocation(true);
     });
