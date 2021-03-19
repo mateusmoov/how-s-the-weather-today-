@@ -1,6 +1,7 @@
 import Text from "../components/Text";
 import NoLocation from "../pages/no-location";
 import { useState, useEffect } from "react";
+import "./api.scss";
 import "../reset.scss";
 
 const Clima = () => {
@@ -31,7 +32,7 @@ const Clima = () => {
   }
 
   if (!data?.weather) {
-    return <p>Batata</p>;
+    return <p>Loading</p>;
   }
 
   console.log(data);
@@ -39,12 +40,17 @@ const Clima = () => {
 
   return (
     <>
-      <img
-        src={`https://openweathermap.org/img/wn/${urlImage}@2x.png`}
-        alt="weather"
-      />
-      <Text type="subtitle">{data?.weather[0]?.description}</Text>
-      <Text type="location">{data?.name}</Text>
+      <div className="main-container">
+        <div className="main-text">
+          <Text type="title">How's the weather today?</Text>
+          <img
+            src={`https://openweathermap.org/img/wn/${urlImage}@2x.png`}
+            alt="weather"
+          />
+          <Text type="subtitle">{data?.weather[0]?.description}</Text>
+          <Text type="location">{data?.name}</Text>
+        </div>
+      </div>
     </>
   );
 };

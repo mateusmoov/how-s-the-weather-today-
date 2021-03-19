@@ -1,9 +1,8 @@
-import Main from "./pages/main";
-
+import Api from "./services/Api";
 function App() {
   return (
     <>
-      <Main />
+      <Api />
     </>
   );
 }
