@@ -1,3 +1,8 @@
+body {
+  background-color: #111223;
+  height: 100vh;
+}
+
 .main-text {
   display: flex;
   flex-direction: column;
@@ -7,18 +12,13 @@
   min-height: 70vh;
 
   * {
-    margin-bottom: 30px;
-  }
-
-  .container-subtitle {
-    width: 700px;
+    margin-bottom: 15px;
   }
 }
 
-.navbar-container {
-  margin-top: 80px;
+.main-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }

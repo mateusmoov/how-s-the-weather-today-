@@ -1,23 +1,59 @@
-import axios from "axios";
+import Text from "../components/Text";
+import NoLocation from "../pages/no-location";
 import { useState, useEffect } from "react";
-require("dotenv").config();
+import "./api.scss";
+import "../reset.scss";
 
-// REACT_APP_API_KEY
-
-function Api() {
+const Clima = () => {
+  const [data, setData] = useState({});
+  const [url, setUrl] = useState();
   const [location, setLocation] = useState(false);
+  const API_KEY = process.env.REACT_APP_API_KEY;
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords.latitude, position.coords.longitude);
+      setUrl(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`
+      );
       setLocation(true);
     });
   }, []);
 
-  if (location === false) {
-    return <h1>You need click in allow to see if rain in your city. :)</h1>;
-  } else {
-    <h1>I'II make this later.</h1>;
-  }
-}
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLocation(true);
+      });
+  }, [location]);
 
-export default Api;
+  if (!location) {
+    return <NoLocation />;
+  }
+
+  if (!data?.weather) {
+    return <p>Loading</p>;
+  }
+
+  console.log(data);
+  let urlImage = data?.weather[0]?.icon;
+
+  return (
+    <>
+      <div className="main-container">
+        <div className="main-text">
+          <Text type="title">How's the weather today?</Text>
+          <img
+            src={`https://openweathermap.org/img/wn/${urlImage}@2x.png`}
+            alt="weather"
+          />
+          <Text type="subtitle">{data?.weather[0]?.description}</Text>
+          <Text type="location">{data?.name}</Text>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Clima;
